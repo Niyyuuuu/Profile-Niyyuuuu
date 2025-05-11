@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niyyuuuu</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" type="module"></script>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+</head>
+<body>
+  <nav class="fixed top-0 left-0 w-full bg-neutral-800 z-10">
+    <div class="flex items-center justify-between p-2 text-white">
+      <div class="text-sm font-bold">Nw.</div>
+      <button class="flex items-center p-2 focus:outline-none" id="menu-toggle">
+        <svg class="w-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V15z" />
+        </svg>
+      </button>
+    </div>
+    <div class="hidden" id="menu">
+      <ul class="flex flex-col space-y-2 p-1 text-xs">
+        <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+        <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+      </ul>
+    </div>
+    <script>
+      const toggleMenu = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
+      toggleMenu.addEventListener('click', function(event) {
+        event.preventDefault();
+        menu.classList.toggle('hidden');
+        toggleMenu.children[0].classList.toggle('rotate-90');
+      });
+    </script>
+  </nav>
+  <section id="home" class="py-10">
+    <div class="flex flex-col p-2 space-y-2 text-white">
+      <p class="text-xs">Hi, I'm</p>
+      <h1 id="name" class="text-5xl font-bold">Ghoniyyu Gama Manggala</h1>
+      <p class="mt-1 mb-2 text-xs">I'm a software engineer based in Bekasi,
+        Indonesia. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.</p>
+    </div>
+    <div class="flex flex-col p-2 space-y-2 text-white">
+      <p class="text-lg font-bold">Experience</p>
+
+      <div class="flex items-center">
+        <div class="text-md mr-auto">Support Engineer (Internship)</div>
+        <div class="text-xs ml-auto text-gray-300">Jul 2024 - Dec 2024</div>
+      </div>
+      <div class="text-xs text-blue-200">Pusat Data dan Informasi Kementerian Pertahanan - Jakarta</div>
+      <div class="text-xs">- Working on a project for the Ministry of Defense</div>
+      <div class="text-xs">- Develop and maintain software solutions</div>
+      <div class="text-xs">- Providing technical support and troubleshooting for software issues</div>
+
+      <div class="flex items-center">
+        <div class="text-md mr-auto mt-4">UI/UX Designer (Remote)</div>
+        <div class="text-xs ml-auto text-gray-300">Jul 2024 - May 2025</div>
+      </div>
+      <div class="text-xs text-blue-200">Syntax Community - SMK Telekomunikasi Telesandi</div>
+      <div class="text-xs">- Working on a project for SMK Telekomunikasi Telesandi</div>
+      <div class="text-xs">- Design and develop an Instagram feed for the community</div>
+      <div class="text-xs">- Create a certificate design for the community</div>
+
+      <div class="flex items-center">
+        <div class="text-md mr-auto mt-4">Web Developer (Freelance)</div>
+        <div class="text-xs ml-auto text-gray-300">Jan 2023 - Current</div>
+      </div>
+      <div class="text-xs text-blue-200">Niustore - Bekasi</div>
+      <div class="text-xs">- Working on a project for Niustore</div>
+      <div class="text-xs">- Develop and maintain a website for Niustore</div>
+      <div class="text-xs">- Provide technical support and troubleshooting for website issues</div>
+    </div>
+  </section>
+
+  <section id="projects" class="mb-10">
+    <div class="flex flex-col p-2 space-y-2 text-white">
+      <p class="text-lg font-bold">Projects</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Project 1 -->
+        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex items-center transform hover:scale-98 hover:shadow-blue-300 transition duration-300">
+          <a href="https://github.com/Niyyuuuu/LPTIK19" target="_blank" class="mr-4">
+            <img src="img/logo-kemhan.png" alt="GitHub" class="w-8 h-8">
+          </a>
+          <div>
+            <div class="text-lg mr-auto">Helpdesk System.</div>
+            <div class="text-md text-white mb-1">A website for the Ministry of Defense</div>
+            <div class="text-xs text-blue-200">Laravel - Tailwind - Telegram Bot</div>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex items-center transform hover:scale-98 hover:shadow-blue-300 transition duration-300">
+          <a href="https://github.com/Niyyuuuu" target="_blank" class="mr-4">
+            <img src="img/logo.png" alt="GitHub" class="w-8 h-8">
+          </a>
+          <div>
+            <div class="text-lg mr-auto">Niyyuuuu.</div>
+            <div class="text-md text-white mb-1">A website for myself</div>
+            <div class="text-xs text-blue-200">HTML - CSS - Tailwind</div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 3 -->
+      <div class="mt-4 flex justify-center w-full">
+        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex items-center w-full max-w-2xl transform hover:scale-98 hover:shadow-blue-300 transition duration-300">
+          <a href="https://www.instagram.com/syntx.id/" target="_blank" class="mr-4">
+            <img src="img/logo-syntax.jpg" alt="GitHub" class="w-8 h-8">
+          </a>
+          <div>
+            <div class="text-lg ">Feed Design.</div>
+            <div class="text-md text-white mb-1">A design for an Instagram feed</div>
+            <div class="text-xs text-blue-200">Figma - Adobe Illustrator - Adobe Photoshop</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="flex flex-col space-y-2 p-2 text-white">
+      <p class="text-lg font-bold">Contact</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-blue-300 transition duration-300">
+          <a href="mailto:ghoniyyumanggala@gmail.com" target="_blank" class="text-white-400 hover:underline">
+            <i class="fi fi-brands-google" style="width: 2em; height: 2em;"></i>
+          </a>
+          <span class="text-xs">Gmail</span>
+        </div>
+
+        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-blue-300 transition duration-300">
+          <a href="https://www.linkedin.com/in/ghoniyyu-gama-manggala-59013b327/" target="_blank" class="text-white-400 hover:underline">
+            <i class="fi fi-brands-linkedin" style="width: 2em; height: 2em;"></i>
+          </a>
+          <span class="text-xs">LinkedIn</span>
+        </div>
+
+        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-blue-300 transition duration-300">
+          <a href="https://github.com/Niyyuuuu" target="_blank" class="text-white-400 hover:underline">
+            <i class="fi fi-brands-github" style="width: 2em; height: 2em;"></i>
+          </a>
+          <span class="text-xs">GitHub</span>
+        </div>
+
+        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-blue-300 transition duration-300">
+          <a href="https://www.instagram.com/niyyuuuu/" target="_blank" class="text-white-400 hover:underline">
+            <i class="fi fi-brands-instagram" style="width: 2em; height: 2em;"></i>
+          </a>
+          <span class="text-xs">Instagram</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-neutral-800 p-4 text-center text-white mt-8">
+    <p class="text-xs mt-4 mb-4">© 2024 Ghoniyyu Gama Manggala. All rights reserved.</p></body>
+</html>
