@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #1e1e1e;
+  background-color: #0e0e0e;
   color: #eaeaea;
   overflow-x: hidden;
 }
@@ -17,11 +13,11 @@ body {
 }
 
 nav {
-  background-color: #1e1e1e;
+  background-color: #0e0e0e;
 }
 
 #menu {
-  background-color: #1e1e1e;
+  background-color: #0e0e0e;
   padding: 10px;
   border-radius: 5px;
 }
@@ -34,11 +30,15 @@ nav {
 }
 
 #name {
-  background: linear-gradient(140deg, #ffffff, #3790b4);
+  background: linear-gradient(140deg, #e3c4dc, #d28fff, #799ddf);
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
   padding-bottom: 4px;
+}
+
+.hidden {
+  display: none;
 }

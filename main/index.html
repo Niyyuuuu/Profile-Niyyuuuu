@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth !important;">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,21 +11,26 @@
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
 <body>
-  <nav class="fixed top-0 left-0 w-full bg-neutral-800 z-10">
+  <nav class="fixed top-0 left-0 w-full bg-neutral-900 z-10 p-2">
     <div class="flex items-center justify-between p-2 text-white">
       <div class="text-sm font-bold">Nw.</div>
-      <button class="flex items-center p-2 focus:outline-none" id="menu-toggle">
+      <div class="hidden md:flex space-x-4 text-xs">
+        <a href="#home" class="hover:text-violet-300">Home</a>
+        <a href="#projects" class="hover:text-sky-300">Projects</a>
+        <a href="#contact" class="hover:text-pink-400">Contact</a>
+      </div>
+      <button class="flex items-center p-2 focus:outline-none md:hidden" id="menu-toggle">
         <svg class="w-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <title>Menu</title>
           <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V15z" />
         </svg>
       </button>
     </div>
-    <div class="hidden" id="menu">
+    <div class="hidden md:hidden" id="menu">
       <ul class="flex flex-col space-y-2 p-1 text-xs">
-        <li><a href="#home" class="hover:text-blue-400">Home</a></li>
-        <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
-        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+        <li><a href="#home" class="hover:text-violet-300">Home</a></li>
+        <li><a href="#projects" class="hover:text-sky-300">Projects</a></li>
+        <li><a href="#contact" class="hover:text-pink-400">Contact</a></li>
       </ul>
     </div>
     <script>
@@ -39,121 +44,186 @@
     </script>
   </nav>
   <section id="home" class="py-10">
-    <div class="flex flex-col p-2 space-y-2 text-white">
+    <div class="flex flex-col p-4 space-y-2 text-white">
       <p class="text-xs">Hi, I'm</p>
       <h1 id="name" class="text-5xl font-bold">Ghoniyyu Gama Manggala</h1>
       <p class="mt-1 mb-2 text-xs">I'm a software engineer based in Bekasi,
         Indonesia. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.</p>
     </div>
-    <div class="flex flex-col p-2 space-y-2 text-white">
-      <p class="text-lg font-bold">Experience</p>
-
-      <div class="flex items-center">
-        <div class="text-md mr-auto">Support Engineer (Internship)</div>
-        <div class="text-xs ml-auto text-gray-300">Jul 2024 - Dec 2024</div>
+    <hr class="border-t border-violet-300 my-6 mx-2">
+    <div class="flex flex-row mx-auto space-x-8 p-4">
+      <!-- Sidebar -->
+      <div class="w-2/3 sticky top-10">
+        <p class="text-lg font-bold mb-4">Experience</p>
+        <ul class="space-y-2" id="experience-tabs">
+          <li>
+            <a href="#pusdatin" class="block px-3 py-2 rounded hover:bg-neutral-800" id="link-pusdatin">Pusdatin Kemhan RI</a>
+          </li>
+          <li>
+            <a href="#syntax" class="block px-3 py-2 rounded hover:bg-neutral-800" id="link-syntax">Syntax <br>Community</a>
+          </li>
+          <li>
+            <a href="#niustore" class="block px-3 py-2 rounded hover:bg-neutral-800" id="link-niustore">Niustore</a>
+          </li>
+        </ul>
       </div>
-      <div class="text-xs text-blue-200">Pusat Data dan Informasi Kementerian Pertahanan - Jakarta</div>
-      <div class="text-xs">- Working on a project for the Ministry of Defense</div>
-      <div class="text-xs">- Develop and maintain software solutions</div>
-      <div class="text-xs">- Providing technical support and troubleshooting for software issues</div>
-
-      <div class="flex items-center">
-        <div class="text-md mr-auto mt-4">UI/UX Designer (Remote)</div>
-        <div class="text-xs ml-auto text-gray-300">Jul 2024 - May 2025</div>
+  
+      <!-- Content -->
+      <div class="w-2/3" id="experience-content">
+        <section id="pusdatin" class="scroll-mt-20">
+          <h2 class="text-xl font-semibold">Pusdatin Kemhan RI</h2>
+          <p class="text-sm text-gray-400">Jul 2024 - Dec 2024</p>
+          <p class="text-indigo-300 text-sm mt-1">Support Engineer (Internship)</p>
+          <ul class="list-disc ml-5 text-sm mt-2 space-y-1 text-gray-300">
+            <li>Working on a project for the Ministry of Defense</li>
+            <li>Develop and maintain software solutions</li>
+            <li>Providing technical support and troubleshooting for software issues</li>
+          </ul>
+        </section>
+  
+        <section id="syntax" class="scroll-mt-20">
+          <h2 class="text-xl font-semibold">Syntax Community</h2>
+          <p class="text-sm text-gray-400">Jul 2024 - May 2025</p>
+          <p class="text-indigo-300 text-sm mt-1">UI/UX Designer (Remote)</p>
+          <ul class="list-disc ml-5 text-sm mt-2 space-y-1 text-gray-300">
+            <li>Working on a project for SMK Telekomunikasi Telesandi</li>
+            <li>Design and develop an Instagram feed for the community</li>
+            <li>Create a certificate design for the community</li>
+          </ul>
+        </section>
+  
+        <section id="niustore" class="scroll-mt-20">
+          <h2 class="text-xl font-semibold">Niustore</h2>
+          <p class="text-sm text-gray-400">Jan 2023 - Current</p>
+          <p class="text-indigo-300 text-sm mt-1">Web Developer (Freelance)</p>
+          <ul class="list-disc ml-5 text-sm mt-2 space-y-7 text-gray-300">
+            <li>Working on a project for Niustore</li>
+            <li>Develop and maintain a website for Niustore</li>
+            <li>Provide technical support and troubleshooting for website issues</li>
+          </ul>
+        </section>
       </div>
-      <div class="text-xs text-blue-200">Syntax Community - SMK Telekomunikasi Telesandi</div>
-      <div class="text-xs">- Working on a project for SMK Telekomunikasi Telesandi</div>
-      <div class="text-xs">- Design and develop an Instagram feed for the community</div>
-      <div class="text-xs">- Create a certificate design for the community</div>
-
-      <div class="flex items-center">
-        <div class="text-md mr-auto mt-4">Web Developer (Freelance)</div>
-        <div class="text-xs ml-auto text-gray-300">Jan 2023 - Current</div>
-      </div>
-      <div class="text-xs text-blue-200">Niustore - Bekasi</div>
-      <div class="text-xs">- Working on a project for Niustore</div>
-      <div class="text-xs">- Develop and maintain a website for Niustore</div>
-      <div class="text-xs">- Provide technical support and troubleshooting for website issues</div>
     </div>
-  </section>
+  
+    <script>
+      const tabs = document.querySelectorAll("#experience-tabs a");
+      const sections = document.querySelectorAll("#experience-content section");
 
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Hide all sections
+          sections.forEach((section) => {
+            section.classList.add("hidden");
+          });
+
+          // Remove active class from all tabs
+          tabs.forEach((tab) => {
+            tab.classList.remove("bg-gray-800", "text-indigo-400", "font-semibold");
+          });
+
+          // Show the selected section
+          const targetId = tab.getAttribute("href").slice(1);
+          document.getElementById(targetId).classList.remove("hidden");
+
+          // Add active class to the clicked tab
+          tab.classList.add("bg-gray-800", "text-indigo-400", "font-semibold");
+        });
+      });
+
+      // Show the first section by default
+      sections.forEach((section, index) => {
+        if (index === 0) {
+          section.classList.remove("hidden");
+        } else {
+          section.classList.add("hidden");
+        }
+      });
+    </script>
+  </section>
+  <hr class="border-t border-sky-300 my-6 mx-2">
   <section id="projects" class="mb-10">
-    <div class="flex flex-col p-2 space-y-2 text-white">
+    <div class="flex flex-col p-4 space-y-2 text-white">
       <p class="text-lg font-bold">Projects</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <!-- Project 1 -->
-        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex items-center transform hover:scale-98 hover:shadow-blue-300 transition duration-300">
-          <a href="https://github.com/Niyyuuuu/LPTIK19" target="_blank" class="mr-4">
-            <img src="img/logo-kemhan.png" alt="GitHub" class="w-8 h-8">
+        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-sky-300 transition duration-300">
+          <a href="https://github.com/Niyyuuuu/LPTIK19" target="_blank" class="mb-2">
+            <img src="img/logo-kemhan.png" alt="GitHub" class="w-20 h-20">
           </a>
-          <div>
-            <div class="text-lg mr-auto">Helpdesk System.</div>
-            <div class="text-md text-white mb-1">A website for the Ministry of Defense</div>
-            <div class="text-xs text-blue-200">Laravel - Tailwind - Telegram Bot</div>
+          <div class="text-center">
+            <div class="text-lg">Helpdesk System.</div>
+            <div class="text-xs text-white mb-1">A website for the Ministry of Defense</div>
+            <div class="text-xs text-sky-300">Laravel - Tailwind - Telegram Bot</div>
           </div>
         </div>
         <!-- Project 2 -->
-        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex items-center transform hover:scale-98 hover:shadow-blue-300 transition duration-300">
-          <a href="https://github.com/Niyyuuuu" target="_blank" class="mr-4">
-            <img src="img/logo.png" alt="GitHub" class="w-8 h-8">
+        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-sky-300 transition duration-300">
+          <a href="https://github.com/Niyyuuuu" target="_blank" class="mb-2">
+            <img src="img/logo.png" alt="GitHub" class="w-20 h-20">
           </a>
-          <div>
-            <div class="text-lg mr-auto">Niyyuuuu.</div>
-            <div class="text-md text-white mb-1">A website for myself</div>
-            <div class="text-xs text-blue-200">HTML - CSS - Tailwind</div>
+          <div class="text-center">
+            <div class="text-lg">Personal Website.</div>
+            <div class="text-xs text-white mb-1">A website for myself</div>
+            <div class="text-xs text-sky-300">HTML - CSS - Tailwind</div>
           </div>
         </div>
-      </div>
-      <!-- Project 3 -->
-      <div class="mt-4 flex justify-center w-full">
-        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex items-center w-full max-w-2xl transform hover:scale-98 hover:shadow-blue-300 transition duration-300">
-          <a href="https://www.instagram.com/syntx.id/" target="_blank" class="mr-4">
-            <img src="img/logo-syntax.jpg" alt="GitHub" class="w-8 h-8">
+        <!-- Project 3 -->
+        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-sky-300 transition duration-300">
+          <a href="https://www.instagram.com/syntx.id/" target="_blank" class="mb-2">
+            <img src="img/logo-syntax.jpg" alt="GitHub" class="w-20 h-20">
           </a>
-          <div>
-            <div class="text-lg ">Feed Design.</div>
-            <div class="text-md text-white mb-1">A design for an Instagram feed</div>
-            <div class="text-xs text-blue-200">Figma - Adobe Illustrator - Adobe Photoshop</div>
+          <div class="text-center">
+            <div class="text-lg">Feed Design.</div>
+            <div class="text-xs text-white mb-1">A design for an Instagram feed</div>
+            <div class="text-xs text-sky-200">Figma - Adobe Illustrator - Adobe Photoshop</div>
+          </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-sky-300 transition duration-300">
+          <a href="https://weather-sigma-umber.vercel.app/" target="_blank" class="mb-2">
+            <img src="img/weather.png" alt="GitHub" class="w-20 h-20">
+          </a>
+          <div class="text-center">
+            <div class="text-lg">Weather Web.</div>
+            <div class="text-xs text-white mb-1">Develop a website for a weather app</div>
+            <div class="text-xs text-sky-200">Javascript - WeatherAPI</div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <hr class="border-t border-pink-400  my-6 mx-2">
   <section id="contact">
-    <div class="flex flex-col space-y-2 p-2 text-white">
+    <div class="flex flex-col space-y-2 p-4 text-white">
       <p class="text-lg font-bold">Contact</p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-5xl">
 
-        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-blue-300 transition duration-300">
-          <a href="mailto:ghoniyyumanggala@gmail.com" target="_blank" class="text-white-400 hover:underline">
-            <i class="fi fi-brands-google" style="width: 2em; height: 2em;"></i>
-          </a>
-          <span class="text-xs">Gmail</span>
-        </div>
+        <a href="mailto:ghoniyyumanggala@gmail.com" target="_blank" class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
+          <i class="fi fi-brands-google text-2xl mt-4"></i>
+          <span class="text-xs mb-4">Gmail</span>
+        </a>
 
-        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-blue-300 transition duration-300">
-          <a href="https://www.linkedin.com/in/ghoniyyu-gama-manggala-59013b327/" target="_blank" class="text-white-400 hover:underline">
-            <i class="fi fi-brands-linkedin" style="width: 2em; height: 2em;"></i>
-          </a>
-          <span class="text-xs">LinkedIn</span>
-        </div>
+        <a href="https://www.linkedin.com/in/ghoniyyu-gama-manggala-59013b327/" target="_blank" class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
+          <i class="fi fi-brands-linkedin text-2xl mt-4"></i>
+          <span class="text-xs mb-4">LinkedIn</span>
+        </a>
 
-        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-blue-300 transition duration-300">
-          <a href="https://github.com/Niyyuuuu" target="_blank" class="text-white-400 hover:underline">
-            <i class="fi fi-brands-github" style="width: 2em; height: 2em;"></i>
-          </a>
-          <span class="text-xs">GitHub</span>
-        </div>
+        <a href="https://github.com/Niyyuuuu" target="_blank" class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
+          <i class="fi fi-brands-github text-2xl mt-4"></i>
+          <span class="text-xs mb-4">GitHub</span>
+        </a>
 
-        <div class="bg-neutral-800 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-blue-300 transition duration-300">
-          <a href="https://www.instagram.com/niyyuuuu/" target="_blank" class="text-white-400 hover:underline">
-            <i class="fi fi-brands-instagram" style="width: 2em; height: 2em;"></i>
-          </a>
-          <span class="text-xs">Instagram</span>
-        </div>
+        <a href="https://www.instagram.com/niyyuuuu/" target="_blank" class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
+          <i class="fi fi-brands-instagram text-2xl mt-4"></i>
+          <span class="text-xs mb-4">Instagram</span>
+        </a>
       </div>
     </div>
   </section>
   <footer class="bg-neutral-800 p-4 text-center text-white mt-8">
-    <p class="text-xs mt-4 mb-4">© 2024 Ghoniyyu Gama Manggala. All rights reserved.</p></body>
+    <p class="text-xs mt-4 mb-4">© 2025 Niyyuuuu. All rights reserved.</p>
+  </footer>
+</body>
 </html>
