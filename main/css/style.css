@@ -42,3 +42,22 @@ nav {
 .hidden {
   display: none;
 }
+
+@keyframes fadeBlur {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateX(-6px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.fade-blur {
+  opacity: 0;
+  display: inline-block;
+  animation: fadeBlur 0.4s ease-out forwards;
+}

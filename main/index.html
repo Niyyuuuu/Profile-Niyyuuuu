@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Niyyuuuu</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" type="module"></script>
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
 <body>
   <nav class="fixed top-0 left-0 w-full bg-neutral-900 z-10 p-2">
     <div class="flex items-center justify-between p-2 text-white">
@@ -33,73 +36,104 @@
         <li><a href="#contact" class="hover:text-pink-400">Contact</a></li>
       </ul>
     </div>
+    <div id="progress-bar" class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-black to-neutral-200"></div>
     <script>
       const toggleMenu = document.getElementById('menu-toggle');
       const menu = document.getElementById('menu');
+      const progressBar = document.getElementById('progress-bar');
+      
       toggleMenu.addEventListener('click', function(event) {
         event.preventDefault();
         menu.classList.toggle('hidden');
         toggleMenu.children[0].classList.toggle('rotate-90');
       });
+      
+      window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+        progressBar.style.width = scrollPercentage + '%';
+      });
     </script>
   </nav>
   <section id="home" class="py-10">
     <div class="flex flex-col p-4 space-y-2 text-white">
-      <p class="text-xs">Hi, I'm</p>
-      <h1 id="name" class="text-5xl font-bold">Ghoniyyu Gama Manggala</h1>
-      <p class="mt-1 mb-2 text-xs">I'm a software engineer based in Bekasi,
-        Indonesia. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.</p>
+      <p class="text-xs fade-blur" style="animation-delay: 0ms;">Hi, I'm</p>
+      <h1 id="name" class="text-5xl font-bold fade-blur" style="animation-delay: 100ms;">Ghoniyyu Gama Manggala</h1>
+      <p id="intro" class="mt-1 mb-2 text-xs flex flex-wrap gap-x-1"></p>
+      <script>
+        const text = `I'm a software engineer based in Bekasi, Indonesia. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.`;
+        const container = document.getElementById("intro");
+      
+        text.split(" ").forEach((word, i) => {
+          const span = document.createElement("span");
+          span.textContent = word;
+          span.className = "fade-blur";
+          span.style.animationDelay = `${i * 50}ms`;
+          container.appendChild(span);
+        });
+      </script>
+      
     </div>
-    <hr class="border-t border-violet-300 my-6 mx-2">
+    <hr class="border-t border-indigo-300 my-6 mx-2">
     <div class="flex flex-row mx-auto space-x-8 p-4">
       <!-- Sidebar -->
       <div class="w-2/3 sticky top-10">
         <p class="text-lg font-bold mb-4">Experience</p>
-        <ul class="space-y-2" id="experience-tabs">
+        <ul id="experience-tabs">
           <li>
-            <a href="#pusdatin" class="block px-3 py-2 rounded hover:bg-neutral-800" id="link-pusdatin">Pusdatin Kemhan RI</a>
+            <a href="#pusdatin"
+               class="block px-3 py-2 transition-all duration-300 border-l-2 border-neutral-700 hover:bg-neutral-800 text-sm"
+               id="link-pusdatin">
+               Pusdatin Kemhan RI
+            </a>
           </li>
           <li>
-            <a href="#syntax" class="block px-3 py-2 rounded hover:bg-neutral-800" id="link-syntax">Syntax <br>Community</a>
+            <a href="#syntax"
+               class="block px-3 py-2 transition-all duration-300 border-l-2 border-neutral-700 hover:bg-neutral-800 text-sm"
+               id="link-syntax">
+               Syntax <br>Community
+            </a>
           </li>
           <li>
-            <a href="#niustore" class="block px-3 py-2 rounded hover:bg-neutral-800" id="link-niustore">Niustore</a>
+            <a href="#niustore"
+               class="block px-3 py-2 transition-all duration-300 border-l-2 border-neutral-700 hover:bg-neutral-800 text-sm"
+               id="link-niustore">
+               Niustore
+            </a>
           </li>
         </ul>
       </div>
   
       <!-- Content -->
       <div class="w-2/3" id="experience-content">
-        <section id="pusdatin" class="scroll-mt-20">
-          <h2 class="text-xl font-semibold">Pusdatin Kemhan RI</h2>
-          <p class="text-sm text-gray-400">Jul 2024 - Dec 2024</p>
-          <p class="text-indigo-300 text-sm mt-1">Support Engineer (Internship)</p>
-          <ul class="list-disc ml-5 text-sm mt-2 space-y-1 text-gray-300">
+        <section id="pusdatin" class="scroll-mt-30 mt-12">
+          <h2 class="text-md font-semibold text-indigo-300 mb-2">Support IT</h2>
+          <p class="text-xs text-gray-400">Jul 2024 - Dec 2024</p>
+          <ul class="list-disc ml-5 text-xs mt-2 space-y-1 text-gray-300">
             <li>Working on a project for the Ministry of Defense</li>
             <li>Develop and maintain software solutions</li>
             <li>Providing technical support and troubleshooting for software issues</li>
           </ul>
         </section>
   
-        <section id="syntax" class="scroll-mt-20">
-          <h2 class="text-xl font-semibold">Syntax Community</h2>
-          <p class="text-sm text-gray-400">Jul 2024 - May 2025</p>
-          <p class="text-indigo-300 text-sm mt-1">UI/UX Designer (Remote)</p>
-          <ul class="list-disc ml-5 text-sm mt-2 space-y-1 text-gray-300">
+        <section id="syntax" class="scroll-mt-30 hidden mt-12">
+          <h2 class="text-md font-semibold text-indigo-300 mb-2">UI/UX Designer</h2>
+          <p class="text-xs text-gray-400">Jul 2024 - May 2025</p>
+          <ul class="list-disc ml-5 text-xs mt-2 space-y-1 text-gray-300">
             <li>Working on a project for SMK Telekomunikasi Telesandi</li>
             <li>Design and develop an Instagram feed for the community</li>
             <li>Create a certificate design for the community</li>
           </ul>
         </section>
   
-        <section id="niustore" class="scroll-mt-20">
-          <h2 class="text-xl font-semibold">Niustore</h2>
-          <p class="text-sm text-gray-400">Jan 2023 - Current</p>
-          <p class="text-indigo-300 text-sm mt-1">Web Developer (Freelance)</p>
-          <ul class="list-disc ml-5 text-sm mt-2 space-y-7 text-gray-300">
-            <li>Working on a project for Niustore</li>
-            <li>Develop and maintain a website for Niustore</li>
-            <li>Provide technical support and troubleshooting for website issues</li>
+        <section id="niustore" class="scroll-mt-30 hidden mt-12">
+          <h2 class="text-md font-semibold text-indigo-300 mb-2">Web Developer</h2>
+          <p class="text-xs text-gray-400">Jan 2023 - Current</p>
+          <ul class="list-disc ml-5 text-xs mt-2 space-y-1 text-gray-300">
+            <li>Working on a website project for Niustore</li>
+            <li>Develop and maintain an e-commerce website for the brand</li>
+            <li>Provide technical support and handle website troubleshooting</li>
           </ul>
         </section>
       </div>
@@ -108,87 +142,84 @@
     <script>
       const tabs = document.querySelectorAll("#experience-tabs a");
       const sections = document.querySelectorAll("#experience-content section");
-
+  
       tabs.forEach((tab) => {
         tab.addEventListener("click", (e) => {
           e.preventDefault();
-
-          // Hide all sections
+  
+          // Sembunyikan semua section
           sections.forEach((section) => {
             section.classList.add("hidden");
           });
-
-          // Remove active class from all tabs
-          tabs.forEach((tab) => {
-            tab.classList.remove("bg-gray-800", "text-indigo-400", "font-semibold");
+  
+          // Reset semua tab
+          tabs.forEach((t) => {
+            t.classList.remove("border-l-4", "border-indigo-500", "bg-neutral-800", "text-indigo-300", "font-semibold");
+            t.classList.add("border-l-2", "border-neutral-700");
           });
-
-          // Show the selected section
+  
+          // Tampilkan section yang dipilih
           const targetId = tab.getAttribute("href").slice(1);
           document.getElementById(targetId).classList.remove("hidden");
-
-          // Add active class to the clicked tab
-          tab.classList.add("bg-gray-800", "text-indigo-400", "font-semibold");
+  
+          // Aktifkan style garis tebal
+          tab.classList.remove("border-l-2", "border-neutral-700");
+          tab.classList.add("border-l-4", "border-indigo-500", "bg-neutral-800", "text-indigo-300", "font-semibold");
         });
       });
-
-      // Show the first section by default
-      sections.forEach((section, index) => {
-        if (index === 0) {
-          section.classList.remove("hidden");
-        } else {
-          section.classList.add("hidden");
-        }
-      });
+  
+      // Default: aktifkan tab pertama
+      tabs[0].classList.add("border-l-4", "border-indigo-500", "bg-neutral-800", "text-indigo-300", "font-semibold");
+      tabs[0].classList.remove("border-l-2", "border-neutral-700");
     </script>
   </section>
-  <hr class="border-t border-sky-300 my-6 mx-2">
+  <hr class="border-t border-violet-300 my-6 mx-2">
   <section id="projects" class="mb-10">
     <div class="flex flex-col p-4 space-y-2 text-white">
       <p class="text-lg font-bold">Projects</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <!-- Project 1 -->
-        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-sky-300 transition duration-300">
+        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-violet-300 transition duration-300">
           <a href="https://github.com/Niyyuuuu/LPTIK19" target="_blank" class="mb-2">
             <img src="img/logo-kemhan.png" alt="GitHub" class="w-20 h-20">
           </a>
           <div class="text-center">
-            <div class="text-lg">Helpdesk System.</div>
+            <div class="text-base">Helpdesk System.</div>
             <div class="text-xs text-white mb-1">A website for the Ministry of Defense</div>
-            <div class="text-xs text-sky-300">Laravel - Tailwind - Telegram Bot</div>
+            <div class="text-xs text-violet-300">Laravel - Tailwind - Telegram Bot</div>
           </div>
         </div>
         <!-- Project 2 -->
-        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-sky-300 transition duration-300">
+        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-violet-300 transition duration-300">
           <a href="https://github.com/Niyyuuuu" target="_blank" class="mb-2">
             <img src="img/logo.png" alt="GitHub" class="w-20 h-20">
           </a>
           <div class="text-center">
-            <div class="text-lg">Personal Website.</div>
+            <div class="text-base">Personal Website.</div>
             <div class="text-xs text-white mb-1">A website for myself</div>
-            <div class="text-xs text-sky-300">HTML - CSS - Tailwind</div>
+            <div class="text-xs text-violet-300">HTML - CSS - Tailwind</div>
           </div>
         </div>
         <!-- Project 3 -->
-        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-sky-300 transition duration-300">
+        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-violet-300 transition duration-300">
           <a href="https://www.instagram.com/syntx.id/" target="_blank" class="mb-2">
             <img src="img/logo-syntax.jpg" alt="GitHub" class="w-20 h-20">
           </a>
           <div class="text-center">
-            <div class="text-lg">Feed Design.</div>
+            <div class="text-base">Feed Design.</div>
             <div class="text-xs text-white mb-1">A design for an Instagram feed</div>
-            <div class="text-xs text-sky-200">Figma - Adobe Illustrator - Adobe Photoshop</div>
+            <div class="text-xs text-violet-200">Figma - Adobe Illustrator - Adobe Photoshop</div>
           </div>
         </div>
         <!-- Project 4 -->
-        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-sky-300 transition duration-300">
+        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-violet-300 transition duration-300">
           <a href="https://weather-sigma-umber.vercel.app/" target="_blank" class="mb-2">
             <img src="img/weather.png" alt="GitHub" class="w-20 h-20">
           </a>
           <div class="text-center">
-            <div class="text-lg">Weather Web.</div>
+            <div class="text-base">Weather Web.</div>
             <div class="text-xs text-white mb-1">Develop a website for a weather app</div>
-            <div class="text-xs text-sky-200">Javascript - WeatherAPI</div>
+            <div class="text-xs text-violet-200">Javascript - WeatherAPI</div>
           </div>
         </div>
       </div>
@@ -200,25 +231,33 @@
       <p class="text-lg font-bold">Contact</p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-5xl">
 
-        <a href="mailto:ghoniyyumanggala@gmail.com" target="_blank" class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
-          <i class="fi fi-brands-google text-2xl mt-4"></i>
+        <div class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
+          <a href="mailto:ghoniyyumanggala@gmail.com" target="_blank">
+            <i class="fi fi-brands-google text-2xl mt-4"></i>
+          </a>
           <span class="text-xs mb-4">Gmail</span>
-        </a>
+        </div>
 
-        <a href="https://www.linkedin.com/in/ghoniyyu-gama-manggala-59013b327/" target="_blank" class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
-          <i class="fi fi-brands-linkedin text-2xl mt-4"></i>
+        <div class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
+          <a href="https://www.linkedin.com/in/ghoniyyu-gama-manggala-59013b327/" target="_blank">
+            <i class="fi fi-brands-linkedin text-2xl mt-4"></i>
+          </a>
           <span class="text-xs mb-4">LinkedIn</span>
-        </a>
+        </div>
 
-        <a href="https://github.com/Niyyuuuu" target="_blank" class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
-          <i class="fi fi-brands-github text-2xl mt-4"></i>
+        <div class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
+          <a href="https://github.com/Niyyuuuu" target="_blank">
+            <i class="fi fi-brands-github text-2xl mt-4"></i>
+          </a>
           <span class="text-xs mb-4">GitHub</span>
-        </a>
+        </div>
 
-        <a href="https://www.instagram.com/niyyuuuu/" target="_blank" class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
-          <i class="fi fi-brands-instagram text-2xl mt-4"></i>
+        <div class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
+          <a href="https://www.instagram.com/niyyuuuu/" target="_blank">
+            <i class="fi fi-brands-instagram text-2xl mt-4"></i>
+          </a>
           <span class="text-xs mb-4">Instagram</span>
-        </a>
+        </div>
       </div>
     </div>
   </section>
