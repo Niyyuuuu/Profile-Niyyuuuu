@@ -30,7 +30,7 @@ nav {
 }
 
 #name {
-  background: rgb(149, 149, 149);
+  background: white;
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
