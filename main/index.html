@@ -18,9 +18,9 @@
     <div class="flex items-center justify-between p-2 text-white">
       <div class="text-sm font-bold">Nw.</div>
       <div class="hidden md:flex space-x-4 text-xs">
-        <a href="#home" class="hover:text-violet-300">Home</a>
+        <a href="#home" class="hover:text-gray-300">Home</a>
         <a href="#projects" class="hover:text-sky-300">Projects</a>
-        <a href="#contact" class="hover:text-pink-400">Contact</a>
+        <a href="#contact" class="hover:text-gray-400">Contact</a>
       </div>
       <button class="flex items-center p-2 focus:outline-none md:hidden" id="menu-toggle">
         <svg class="w-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -31,9 +31,10 @@
     </div>
     <div class="hidden md:hidden" id="menu">
       <ul class="flex flex-col space-y-2 p-1 text-xs">
-        <li><a href="#home" class="hover:text-violet-300">Home</a></li>
+        <li><a href="#home" class="hover:text-gray-300">Home</a></li>
+        <li><a href="#experience" class="hover:text-sky-300">Experience</a></li>
         <li><a href="#projects" class="hover:text-sky-300">Projects</a></li>
-        <li><a href="#contact" class="hover:text-pink-400">Contact</a></li>
+        <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
       </ul>
     </div>
     <div id="progress-bar" class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-black to-neutral-200"></div>
@@ -62,7 +63,7 @@
       <h1 id="name" class="text-5xl font-bold fade-blur" style="animation-delay: 100ms;">Ghoniyyu Gama Manggala</h1>
       <p id="intro" class="mt-1 mb-2 text-xs flex flex-wrap gap-x-1"></p>
       <script>
-        const text = `I'm a software engineer based in Bekasi, Indonesia. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.`;
+        const text = `I'm an Electrical Engineering student at Diponegoro University based in Bekasi, Indonesia. I enjoy working on embedded systems, robotics, and software projects—especially when I get to bring hardware and code together into real, functional products.`;
         const container = document.getElementById("intro");
       
         text.split(" ").forEach((word, i) => {
@@ -75,12 +76,21 @@
       </script>
       
     </div>
-    <hr class="border-t border-indigo-300 my-6 mx-2">
+  </section>
+    <hr class="border-t border-gray-300 my-6 mx-2">
+  <section id="experience" class="mb-10">
     <div class="flex flex-row mx-auto space-x-8 p-4">
       <!-- Sidebar -->
       <div class="w-2/3 sticky top-10">
         <p class="text-lg font-bold mb-4">Experience</p>
         <ul id="experience-tabs">
+          <li>
+            <a href="#urdc"
+               class="block px-3 py-2 transition-all duration-300 border-l-2 border-neutral-700 hover:bg-neutral-800 text-sm"
+               id="link-pusdatin">
+               Internship URDC
+            </a>
+          </li>
           <li>
             <a href="#pusdatin"
                class="block px-3 py-2 transition-all duration-300 border-l-2 border-neutral-700 hover:bg-neutral-800 text-sm"
@@ -107,8 +117,18 @@
   
       <!-- Content -->
       <div class="w-2/3" id="experience-content">
-        <section id="pusdatin" class="scroll-mt-30 mt-12">
-          <h2 class="text-md font-semibold text-indigo-300 mb-2">Support IT</h2>
+        <section id="urdc" class="scroll-mt-30 mt-12">
+          <h2 class="text-md font-semibold text-gray-300 mb-2">Program</h2>
+          <p class="text-xs text-gray-400">Sep 2025 - Now</p>
+          <ul class="list-disc ml-5 text-xs mt-2 space-y-1 text-gray-300">
+            <li>Work on embedded systems and robot control using STM32</li>
+            <li>Design communication pipeline between vision, control, and hardware modules</li>
+            <li>Support robot debugging, integration, and testing</li>
+          </ul>
+        </section>
+
+        <section id="pusdatin" class="scroll-mt-30 hidden mt-12">
+          <h2 class="text-md font-semibold text-gray-300 mb-2">Fullstack Developer</h2>
           <p class="text-xs text-gray-400">Jul 2024 - Dec 2024</p>
           <ul class="list-disc ml-5 text-xs mt-2 space-y-1 text-gray-300">
             <li>Working on a project for the Ministry of Defense</li>
@@ -118,7 +138,7 @@
         </section>
   
         <section id="syntax" class="scroll-mt-30 hidden mt-12">
-          <h2 class="text-md font-semibold text-indigo-300 mb-2">UI/UX Designer</h2>
+          <h2 class="text-md font-semibold text-gray-300 mb-2">UI/UX Lead</h2>
           <p class="text-xs text-gray-400">Jul 2024 - May 2025</p>
           <ul class="list-disc ml-5 text-xs mt-2 space-y-1 text-gray-300">
             <li>Working on a project for SMK Telekomunikasi Telesandi</li>
@@ -128,7 +148,7 @@
         </section>
   
         <section id="niustore" class="scroll-mt-30 hidden mt-12">
-          <h2 class="text-md font-semibold text-indigo-300 mb-2">Web Developer</h2>
+          <h2 class="text-md font-semibold text-gray-300 mb-2">Web Developer</h2>
           <p class="text-xs text-gray-400">Jan 2023 - Current</p>
           <ul class="list-disc ml-5 text-xs mt-2 space-y-1 text-gray-300">
             <li>Working on a website project for Niustore</li>
@@ -154,7 +174,7 @@
   
           // Reset semua tab
           tabs.forEach((t) => {
-            t.classList.remove("border-l-4", "border-indigo-500", "bg-neutral-800", "text-indigo-300", "font-semibold");
+            t.classList.remove("border-l-4", "border-gray-500", "bg-neutral-800", "text-gray-300", "font-semibold");
             t.classList.add("border-l-2", "border-neutral-700");
           });
   
@@ -164,95 +184,95 @@
   
           // Aktifkan style garis tebal
           tab.classList.remove("border-l-2", "border-neutral-700");
-          tab.classList.add("border-l-4", "border-indigo-500", "bg-neutral-800", "text-indigo-300", "font-semibold");
+          tab.classList.add("border-l-4", "border-gray-500", "bg-neutral-800", "text-gray-300", "font-semibold");
         });
       });
   
       // Default: aktifkan tab pertama
-      tabs[0].classList.add("border-l-4", "border-indigo-500", "bg-neutral-800", "text-indigo-300", "font-semibold");
+      tabs[0].classList.add("border-l-4", "border-gray-500", "bg-neutral-800", "text-gray-300", "font-semibold");
       tabs[0].classList.remove("border-l-2", "border-neutral-700");
     </script>
   </section>
-  <hr class="border-t border-violet-300 my-6 mx-2">
+  <hr class="border-t border-gray-300 my-6 mx-2">
   <section id="projects" class="mb-10">
     <div class="flex flex-col p-4 space-y-2 text-white">
       <p class="text-lg font-bold">Projects</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <!-- Project 1 -->
-        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-violet-300 transition duration-300">
+        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-gray-300 transition duration-300">
           <a href="https://github.com/Niyyuuuu/LPTIK19" target="_blank" class="mb-2">
             <img src="img/logo-kemhan.png" alt="GitHub" class="w-20 h-20">
           </a>
           <div class="text-center">
             <div class="text-base">Helpdesk System.</div>
             <div class="text-xs text-white mb-1">A website for the Ministry of Defense</div>
-            <div class="text-xs text-violet-300">Laravel - Tailwind - Telegram Bot</div>
+            <div class="text-xs text-gray-300">Laravel - Tailwind - Telegram Bot</div>
           </div>
         </div>
         <!-- Project 2 -->
-        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-violet-300 transition duration-300">
+        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-gray-300 transition duration-300">
           <a href="https://github.com/Niyyuuuu" target="_blank" class="mb-2">
             <img src="img/logo.png" alt="GitHub" class="w-20 h-20">
           </a>
           <div class="text-center">
             <div class="text-base">Personal Website.</div>
             <div class="text-xs text-white mb-1">A website for myself</div>
-            <div class="text-xs text-violet-300">HTML - CSS - Tailwind</div>
+            <div class="text-xs text-gray-300">HTML - CSS - Tailwind</div>
           </div>
         </div>
         <!-- Project 3 -->
-        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-violet-300 transition duration-300">
+        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-gray-300 transition duration-300">
           <a href="https://www.instagram.com/syntx.id/" target="_blank" class="mb-2">
-            <img src="img/logo-syntax.jpg" alt="GitHub" class="w-20 h-20">
+            <img src="img/logo-syntax.png" alt="GitHub" class="w-20 h-20">
           </a>
           <div class="text-center">
             <div class="text-base">Feed Design.</div>
             <div class="text-xs text-white mb-1">A design for an Instagram feed</div>
-            <div class="text-xs text-violet-200">Figma - Adobe Illustrator - Adobe Photoshop</div>
+            <div class="text-xs text-gray-200">Figma - Adobe Illustrator - Adobe Photoshop</div>
           </div>
         </div>
         <!-- Project 4 -->
-        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-violet-300 transition duration-300">
+        <div class="bg-neutral-900 p-4 rounded-lg shadow-md flex flex-col items-center transform hover:scale-98 hover:shadow-gray-300 transition duration-300">
           <a href="https://weather-sigma-umber.vercel.app/" target="_blank" class="mb-2">
             <img src="img/weather.png" alt="GitHub" class="w-20 h-20">
           </a>
           <div class="text-center">
             <div class="text-base">Weather Web.</div>
             <div class="text-xs text-white mb-1">Develop a website for a weather app</div>
-            <div class="text-xs text-violet-200">Javascript - WeatherAPI</div>
+            <div class="text-xs text-gray-200">Javascript - WeatherAPI</div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <hr class="border-t border-pink-400  my-6 mx-2">
+  <hr class="border-t border-gray-400  my-6 mx-2">
   <section id="contact">
     <div class="flex flex-col space-y-2 p-4 text-white">
       <p class="text-lg font-bold">Contact</p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-5xl">
 
-        <div class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
+        <div class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-gray-400 transition duration-300">
           <a href="mailto:ghoniyyumanggala@gmail.com" target="_blank">
             <i class="fi fi-brands-google text-2xl mt-4"></i>
           </a>
           <span class="text-xs mb-4">Gmail</span>
         </div>
 
-        <div class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
+        <div class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-gray-400 transition duration-300">
           <a href="https://www.linkedin.com/in/ghoniyyu-gama-manggala-59013b327/" target="_blank">
             <i class="fi fi-brands-linkedin text-2xl mt-4"></i>
           </a>
           <span class="text-xs mb-4">LinkedIn</span>
         </div>
 
-        <div class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
+        <div class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-gray-400 transition duration-300">
           <a href="https://github.com/Niyyuuuu" target="_blank">
             <i class="fi fi-brands-github text-2xl mt-4"></i>
           </a>
           <span class="text-xs mb-4">GitHub</span>
         </div>
 
-        <div class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-pink-400 transition duration-300">
+        <div class="bg-neutral-900 p-2 rounded-lg shadow-md flex flex-col items-center transform hover:scale-94 hover:shadow-gray-400 transition duration-300">
           <a href="https://www.instagram.com/niyyuuuu/" target="_blank">
             <i class="fi fi-brands-instagram text-2xl mt-4"></i>
           </a>

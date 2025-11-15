@@ -30,7 +30,7 @@ nav {
 }
 
 #name {
-  background: linear-gradient(140deg, #e3c4dc, #d28fff, #799ddf);
+  background: rgb(149, 149, 149);
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
